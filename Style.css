@@ -139,7 +139,7 @@ header{
 
 .home-section{
     padding-top:198px;
-    padding-bottom:100px;
+    height: 100vh;
     color: white;
     padding-inline: 8%;
     background-image: url(imegas/hero-banner.jpg);
@@ -267,4 +267,5 @@ footer{
 
 
   
+
 
