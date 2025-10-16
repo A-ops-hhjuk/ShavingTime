@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Black Salon</title>
+    <link rel="stylesheet" href="barberpage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+    strong{
+        font-size: 1.3rem;
+    }
+</style>
+</head>
+<body>
+
+<section class="top-section">
+    <div class="info">
+        <h1>Abdullah Al-Khalaileh & Partners Salon</h1>
+        <p><strong>Location:</strong> Tahseen Nakhoua Commercial Complex - Shatt Al Arab Street - Amman</p>
+        <p><strong>Payment Method:</strong> Cash only</p>
+        <p><strong>Shaving:</strong> Beard & hair</p>
+        <p><strong>Phone:</strong> 0796885276</p>
+        <p><strong>Beard & Hair Shaving Price:</strong> 4$</p>
+        <a href="#" class="book-btn" id="book">Book Now</a>
+    </div>
+    <div class="barber-image">
+        <img src="imegas/b1.png" alt="Barber Photo">
+    </div>
+</section>
+
+<section class="bottom-section">
+    <div class="map">
+        <h2>Location on Map</h2>
+        <iframe 
+            src="https://www.google.com/maps?q=Amman,+Jordan&output=embed" 
+            width="100%" 
+            height="300" 
+            frameborder="0" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <div class="hours">
+        <h2>Working Hours</h2>
+        <table>
+            <tr><td>Sunday</td><td>08:00 AM - 12:00 AM</td></tr>
+            <tr><td>Monday</td><td>08:00 AM - 12:00 AM</td></tr>
+            <tr><td>Tuesday</td><td>08:00 AM - 12:00 AM</td></tr>
+            <tr><td>Wednesday</td><td>08:00 AM - 12:00 AM</td></tr>
+            <tr><td>Thursday</td><td>08:00 AM - 12:00 AM</td></tr>
+            <tr><td>Friday</td><td>08:00 AM - 12:00 AM</td></tr>
+            <tr><td>Saturday</td><td>08:00 AM - 12:00 AM</td></tr>
+        </table>
+    </div>
+</section>
+
+<script>
+    const book = document.getElementById('book');
+
+    book.addEventListener('click',function(){
+        alert('Not currently available');
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Forget Password</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src=""></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+          font-family: Arial, sans-serif;
+          direction: ltr;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          height: 100vh;
+          background: url(imegas/reg.jpg);
+          background-repeat:no-repeat;
+          background-position:center ;
+          background-size: cover;
+        }
+        .forget-button{
+            width: 100%;
+            border: none;
+            outline: none;
+            font-weight: 600;
+            font-size: 16px;
+            height: 37px;
+            background-color: hsl(36, 61%, 50%);
+            border-radius: 15px;
+            cursor: pointer;
+            transition:.5s;
+            margin-block: 12px; 
+            color: white;
+        }
+        .forget-button:hover{
+            background-color: hsl(36, 61%, 58%);
+            transform:scale(1.05);
+        }
+        .form-container {
+          width: 400px;
+          background: rgba(0, 0, 0, 0.637);
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 1px 1px 17px #ccc;
+          color: white;
+        }
+        .form-container h1{
+            margin-top:5px ;
+        }
+      
+        input {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 14px;
+        }
+  
+        
+
+      </style>
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Forget Password</h1>
+        <br><br>
+        <form>
+            <input type="text" placeholder="Enter Your Username"class="inp"> 
+            <br>
+            <br>
+            <button type="submit" class="forget-button">Sind a code</button>
+            <br>
+        </form>
+       </div>
+</body>
+</body>
+</html>

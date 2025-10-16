@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Register</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: url(imegas/reg.jpg) no-repeat center;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            width: 400px;
+            background: rgba(0, 0, 0, 0.637);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 1px 1px 17px #ccc;
+            color: white;
+        }
+        .form-container h2 {
+            margin-block: 5px 12px;
+        }
+        .form-group {
+            margin-bottom: 8px;
+        }
+        label {
+            display: block;
+            margin-block: 15px 7px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .barber-options {
+            display: none;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: hsl(36, 69%, 55%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 4px;
+        }
+        button:hover {
+            background-color: hsl(36, 82%, 52%);
+        }
+        .file {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 9px;
+            background-color: brown;
+            text-align: center;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .barber-step input, .barber-step select {
+            margin-block: 8px;
+            padding: 9px;
+            font-size: 15px;
+        }
+        .city {
+            display: flex;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Create New Account</h2>
+    <form id="registerForm" method="POST" action="register.php" enctype="multipart/form-data">
+        <div class="step1">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter email"/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter password"/>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="role">Account Type</label>
+                <select id="role" name="role" required>
+                    <option value="">Select account type</option>
+                    <option value="customer">Customer</option>
+                    <option value="barber">Barber</option>
+                </select>
+            </div>
+            <div class="form-group barber-options" id="barberOptions">
+                <label for="workType">Barber Work Type</label>
+                <select id="workType" name="workType">
+                    <option value="">Select work type</option>
+                    <option value="only in the shop">Shop only</option>
+                    <option value="delivery">Home service</option>
+                    <option value="shop & delivery">Both</option>
+                </select>
+            </div>
+            <button class="next">Next</button>
+        </div>
+
+        <input type="file" id="file" name="photo" style="display: none;">
+        <div class="step-user" style="display: none;">
+            <label for="file" class="file">Choose your photo</label>
+            <center style="margin-top: 10px;">
+              <button type="button" style="width: fit-content; padding-inline:35px; background-color: rgb(129, 129, 129);" onclick="goBack()">Back</button>
+              <button type="submit" style="width: fit-content; padding-inline: 48px;">Register</button>
+          </center>
+        </div>
+
+        <div class="barber-step" style="display: none;">
+            <input type="text" name="price" placeholder="Enter beard & hair shaving price">
+           
+            <select name="location" >
+                <option value="">Choose the governorate</option>
+                <option>Amman</option>
+                <option>Zarqa</option>
+                <option>Ajloun</option>
+                <option>Mafraq</option>
+                <option>Irbid</option>
+                <option>Salt</option>
+                <option>Madaba</option>
+                <option>Ma'an</option>
+                <option>Tafilah</option>
+                <option>Karak</option>
+                <option>Aqaba</option>
+                <option>Jerash</option>
+            </select>
+            <div class="city">
+                <input type="text" placeholder="District name" name="city" >
+                <input type="text" placeholder="Street name" name="street" >
+            </div>
+            <label for="file" class="file">Choose your photo</label>
+            <center>
+                <button type="button" style="width: fit-content; padding-inline:35px; background-color: rgb(129, 129, 129);" onclick="goBack()">Back</button>
+                <button id="reg" type="submit" style="width: fit-content; padding-inline: 48px;">Register</button>
+            </center> 
+        </div>
+    </form>
+</div>
+
+<div id="alertBox" style="display: none; position: fixed; top: 20px; background-color: #f44336; color: white; padding: 12px 20px; border-radius: 6px; left: 50%; transform: translateX(-50%); z-index: 1000;"></div>
+
+<script>
+   const reg = document.getElementById('reg');
+
+reg.addEventListener('click',()=>{
+    alert('Not currently available');
+})
+
+
+
+  const form = document.getElementById('registerForm');
+  const step1 = document.querySelector('.step1');
+  const stepUser = document.querySelector('.step-user');
+  const stepBarber = document.querySelector('.barber-step');
+  const roleSelect = document.getElementById('role');
+  const barberWorkType = document.getElementById('workType');
+  const fileInput = document.getElementById('file');
+  const alertBox = document.getElementById('alertBox');
+
+  const showAlert = (msg) => {
+      alertBox.textContent = msg;
+      alertBox.style.display = 'block';
+      setTimeout(() => alertBox.style.display = 'none', 3000);
+  };
+
+  roleSelect.onchange = () => {
+      document.getElementById('barberOptions').style.display =
+          roleSelect.value === 'barber' ? 'block' : 'none';
+  };
+
+  document.querySelectorAll('label[for="file"]').forEach(label =>
+      label.onclick = (e) => {
+          e.preventDefault();
+          fileInput.click();
+      }
+  );
+
+  document.querySelector('.next').onclick = (e) => {
+      e.preventDefault();
+
+      const inputs = step1.querySelectorAll('input, select');
+      for (let input of inputs) {
+          if (input.required && !input.value.trim()) {
+              showAlert("Please fill in all required fields before proceeding.");
+              return;
+          }
+      }
+
+      if (roleSelect.value === 'barber' && !barberWorkType.value) {
+          showAlert("Please select your barber work type.");
+          return;
+      }
+
+      step1.style.display = 'none';
+      (roleSelect.value === 'barber' ? stepBarber : stepUser).style.display = 'block';
+  };
+
+  function goBack() {
+      step1.style.display = 'block';
+      stepUser.style.display = 'none';
+      stepBarber.style.display = 'none';
+  }
+
+  form.onsubmit = (e) => {
+      e.preventDefault();
+
+      // Check for selected photo (required for both customer & barber)
+      if (!fileInput.files.length) {
+          showAlert("Please select a profile photo before registering.");
+          return;
+      }
+
+      // Validate barber fields if role is barber
+      if (roleSelect.value === 'barber') {
+          const barberFields = stepBarber.querySelectorAll('input, select');
+          for (let field of barberFields) {
+              if (field.required && !field.value.trim()) {
+                  showAlert("Please complete all barber details.");
+                  return;
+              }
+          }
+      }
+
+      // All good - submit the form
+      form.submit();
+  };
+</script>
+
+</body>
+</html>

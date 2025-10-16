@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: url(imegas/reg.jpg) no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.form-container {
+    width: 400px;
+    background: rgba(0, 0, 0, 0.637);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 17px #ccc;
+    color: white;
+}
+.form-container h2 {
+    margin-block: 5px 12px;
+}
+.form-group {
+    margin-bottom: 8px;
+}
+label {
+    display: block;
+    margin-block: 15px 7px;
+}
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.barber-options {
+    display: none;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: hsl(36, 69%, 55%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 4px;
+}
+button:hover {
+    background-color: hsl(36, 82%, 52%);
+}
+.file {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 9px;
+    background-color: brown;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.barber-step input, .barber-step select {
+    margin-block: 8px;
+    padding: 9px;
+    font-size: 15px;
+}
+.city {
+    display: flex;
+    gap: 5px;
+}
