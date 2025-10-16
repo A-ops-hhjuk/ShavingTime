@@ -51,11 +51,11 @@
   /* زر الفتح */
   .toggle-btn {
     position: fixed;
-    top: 25%;
+    top: 26%;
     left: 0;
     background-color: hsl(36, 66%, 51%);
     color: white;
-    padding:35px 9px;
+    padding:25px 9px;
     border-radius: 0 15px 15px 0;
     font-size: 26px;
     cursor: pointer;
@@ -71,3 +71,4 @@
 
 
  
+
