@@ -233,9 +233,6 @@ footer{
    
 }
 @media (width < 435px){
-    header{
-        background-color: black;
-    }
    .media li{
     display: none;
    }
@@ -271,6 +268,7 @@ footer{
 
 
   
+
 
 
 
