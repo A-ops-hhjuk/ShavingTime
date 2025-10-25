@@ -51,7 +51,7 @@
   /* زر الفتح */
   .toggle-btn {
     position: fixed;
-    top: 26%;
+    top: 32%;
     left: 0;
     background-color: hsl(36, 66%, 51%);
     color: white;
@@ -71,4 +71,5 @@
 
 
  
+
 
