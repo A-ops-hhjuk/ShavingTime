@@ -233,12 +233,18 @@ footer{
    
 }
 @media (width < 435px){
+    header{
+        background-color: black;
+    }
    .media li{
     display: none;
    }
    .ul-top .li1{
  margin-inline:auto ;
    }
+    .home-section h1{
+    font-size: 3.2rem;
+}
 }
 @media (width < 410px){
     .header-buttom{
@@ -253,9 +259,7 @@ footer{
 .p-home{
     margin-block: 2px;
 }
-.home-section h1{
-    font-size: 3.5rem;
-}
+
 .b-home{
     margin-top: 32px;
 }
@@ -267,5 +271,6 @@ footer{
 
 
   
+
 
 
